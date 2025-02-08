@@ -9,22 +9,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Anton&display=swap" rel="stylesheet">
 </head>
-    
 <body>
-
     <header>
         <div class="header-overlay"></div>
-        <img src="https://surl.li/ubjagv" alt="Логотип доставки їжі">
+        <img src="https://cdn.discordapp.com/attachments/1020620812774027308/1327576838171787294/7a7fc549b902a98b.png?ex=679e9887&is=679d4707&hm=4a61019a8dfdf0a97533d2a442d772fd27bbf962616f5d69a2eb4273023f8b91&" alt="Логотип доставки їжі">
         <h1>Доставка смачної їжі</h1>
     </header>
 
     <nav>
         <ul>
-            <li><a href="#">Головна</a></li>
-            <li><a href="test.html">Меню</a></li>
+            <li><a href="golovna.html">Головна</a></li>
+            <li><a href="menu.html">Меню</a></li>
             <li><a href="about.html">Про нас</a></li>
-            <li><a href="#cart">Перейти в кошик</a></li>
-           
+            <li><a href="#cart" id="cart-link">Кошик (<span id="cart-count">0</span>)</a></li>
         </ul>
     </nav>
 
@@ -32,16 +29,20 @@
         <section id="menu" class="category">
             <h2>Піца</h2>
             <div class="item">
-                <img src="https://surl.li/smqptw" alt="Маргарита">
-                <p><b>Маргарита</b> - томатний соус, моцарела.</p>
-                <p><b>Ціна: 150 грн.</b></p>
-                <button>Купити</button>
+                <img src="https://cdn.discordapp.com/attachments/1020620812774027308/1332446926200766507/2Q.png?ex=679f2ca6&is=679ddb26&hm=c9488f3067f7a89871d7091c9aa41c6be716094ea396a8038953082f60c532ad&" alt="Маргарита">
+                <div class="item-details">
+                    <p><b>Маргарита</b> - томатний соус, моцарела.</p>
+                    <p><b>Ціна: 150 грн.</b></p>
+                </div>
+                <button onclick="addToCart('Маргарита', 150)">Купити</button>
             </div>
             <div class="item">
                 <img src="https://surl.li/ykoowq" alt="Пепероні">
-                <p><b>Пепероні</b> - томатний соус, моцарела, пепероні.</p>
-                <p><b>Ціна: 180 грн.</b></p>
-                <button>Купити</button>
+                <div class="item-details">
+                    <p><b>Пепероні</b> - томатний соус, моцарела, пепероні.</p>
+                    <p><b>Ціна: 180 грн.</b></p>
+                </div>
+                <button onclick="addToCart('Пепероні', 180)">Купити</button>
             </div>
         </section>
 
@@ -49,23 +50,38 @@
             <h2>Суші</h2>
             <div class="item">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjd-z234PfOLOMfZxM0A81pYUpYtx1TOOpEA&s" alt="Каліфорнія">
-                <p><b>Каліфорнія</b> - рис, норі, авокадо, краб.</p>
-                <p><b>Ціна: 230 грн.</b></p>
-                <button>Купити</button>
+                <div class="item-details">
+                    <p><b>Каліфорнія</b> - рис, норі, авокадо, краб.</p>
+                    <p><b>Ціна: 230 грн.</b></p>
+                </div>
+                <button onclick="addToCart('Каліфорнія', 230)">Купити</button>
             </div>
             <div class="item">
-                <img src="https://surl.li/wfidwt" alt="Каліфорнія">
-                <p><b>Філадельфія</b> - рис, норі, авокадо, краб.</p>
-                <p><b>Ціна: 270 грн.</b></p>
-                <button>Купити</button>
+                <img src="https://surl.li/wfidwt" alt="Філадельфія">
+                <div class="item-details">
+                    <p><b>Філадельфія</b> - рис, норі, авокадо, краб.</p>
+                    <p><b>Ціна: 270 грн.</b></p>
+                </div>
+                <button onclick="addToCart('Філадельфія', 270)">Купити</button>
             </div>
-
         </section>
     </main>
+
+    <!-- Модальне вікно кошика -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Ваш кошик</h2>
+            <ul id="cart-items"></ul>
+            <p><strong>Загальна сума: <span id="cart-total">0</span> грн</strong></p>
+            <button onclick="checkout()">Оформити замовлення</button>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2024 Доставка їжі. Всі права захищені.</p>
     </footer>
 
+    <script src="main.js"></script>
 </body>
 </html>
