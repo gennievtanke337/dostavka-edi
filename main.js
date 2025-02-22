@@ -1,4 +1,4 @@
-// Додайте цей код до файлу script.js
+
 let cart = [];
 let total = 0;
 
@@ -31,7 +31,7 @@ function checkout() {
     closeModal();
 }
 
-// Відкриття та закриття модального вікна
+
 const modal = document.getElementById('cart-modal');
 const cartLink = document.getElementById('cart-link');
 const closeBtn = document.querySelector('.close');
