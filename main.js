@@ -54,3 +54,10 @@ window.addEventListener('click', (e) => {
 function closeModal() {
     modal.style.display = 'none';
 }
+
+function clearCart() {
+    cart = [];
+    total = 0; 
+    updateCart(); 
+    alert('Кошик очищено!'); 
+}
